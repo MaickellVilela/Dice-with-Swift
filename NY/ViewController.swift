@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         
         if event.subtype == UIEventSubtype.MotionShake {
             
-            var aleatory = arc4random_uniform(5)
+            var aleatory = arc4random_uniform(6) + 1
             result.text = String(aleatory)
             
             println(result.text)
