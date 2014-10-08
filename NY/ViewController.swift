@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var dice: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +23,25 @@ class ViewController: UIViewController {
         if event.subtype == UIEventSubtype.MotionShake {
             
             var aleatory = arc4random_uniform(6) + 1
-            result.text = String(aleatory)
             
-            println(result.text)
+            switch aleatory {
+                
+                case 1 : dice.image = UIImage(named: "One.png")
+                
+                case 2 : dice.image = UIImage(named: "Two.png")
+                
+                case 3 : dice.image = UIImage(named: "Three.png")
+                
+                case 4 : dice.image = UIImage(named: "Four.png")
+                
+                case 5 : dice.image = UIImage(named: "Five.png")
+                
+                case 6 : dice.image = UIImage(named: "Six.png")
+                
+                default : 6
+            }
+            
+            println("The Dice face is \(aleatory)")
             
         }
     }
